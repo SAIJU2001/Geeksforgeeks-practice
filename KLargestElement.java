@@ -76,16 +76,19 @@ class Solution
     public static ArrayList<Integer> kLargest(int arr[], int n, int k)
     {
         // code here 
+        //using priority queue wich is reverse order( decending)
         PriorityQueue<Integer>pq=new PriorityQueue<>( Comparator.reverseOrder() );
         ArrayList<Integer>al=new ArrayList<>();
         
         for( int i=0 ; i<n ; i++ )
         {
+            //array elements added to the queue
             pq.add( arr[i] );
         }
         
         for( int i=0 ; i<k ; i++ )
         {
+            //from queue removes the value and added to the list
             al.add( pq.remove() );
         }
         return al;
